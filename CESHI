@@ -1,1 +1,27 @@
+```java
+import java.util.ArrayList;
 
+// "Part1:创建HealthProfessional";
+class HealthProfessional {
+    int id;
+    String name;
+    String description;
+
+    // "默认的构造函数constructor";
+    public HealthProfessional() {
+    }
+
+    // "初始化变量构造函数constructor";
+    public HealthProfessional(int id, String name, String description) {
+        this.id = id;
+        this.name = name;
+        this.description = description;
+    }
+
+    // "打印详情函数printDetails";
+    public void printDetails() {
+        System.out.println("Doctor ID: " + id);
+        System.out.println("Doctor Name: " + name);
+        System.out.println("Doctor Description: " + description);
+    }
+}
