@@ -43,3 +43,13 @@ class GeneralPractitioner extends HealthProfessional {
         System.out.println("Specialty: HealthProfessional");
     }
 }
+
+// "Part2:创建自定义子类Cardiologist";
+class Cardiologist extends HealthProfessionasl {
+    // "声明他的专业specialty";
+    String specialty = "Cardiologist";
+
+    // "默认的构造函数constructor";
+    public Cardiologist() {
+
+    }
