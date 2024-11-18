@@ -45,7 +45,7 @@ class GeneralPractitioner extends HealthProfessional {
 }
 
 // "Part2:创建自定义子类Cardiologist";
-class Cardiologist extends HealthProfessionasl {
+class Cardiologist extends HealthProfessional {
     // "声明他的专业specialty";
     String specialty = "Cardiologist";
 
