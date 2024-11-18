@@ -25,3 +25,4 @@ class HealthProfessional {
         System.out.println("Doctor Description: " + description);
     }
 }
+// "Part2:创建子类GeneralPractitioner";
