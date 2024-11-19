@@ -92,3 +92,56 @@ class Appointment {
         doctor.printDetails();
     }
 }
+
+// "运行主类AssignmentOne";
+public class AssignmentOne {
+    // "Part5:声明appointmentList用于存储Appointment实例的ArrayList";
+    static ArrayList<Appointment> appointmentList = new ArrayList<>();
+
+    // "运行主函数main";
+    public static void main(String[] args) {
+        // "Part3:创建三名全科医生和两名其他类型的医疗专业人员";
+        GeneralPractitioner General1 = new GeneralPractitioner(1, "Anna Taylor", "Family medicine specialist");
+        GeneralPractitioner General2 = new GeneralPractitioner(2, "James Miller", "General health care provider");
+        GeneralPractitioner General3 = new GeneralPractitioner(3, "Laura Wilson", "Focuses on preventive care");
+        Cardiologist Cardiologist1 = new Cardiologist(4, "Sarah Lee", "Cardiovascular imaging specialist");
+        Cardiologist Cardiologist2 = new Cardiologist(5, "Linda Davis", "Arrhythmia and pacemaker expert");
+        // "Part3:输出全部医疗专业人员的信息用printDetails";
+        General1.printDetails();
+        System.out.println("------------------------------");
+        General2.printDetails();
+        System.out.println("------------------------------");
+        General3.printDetails();
+        System.out.println("------------------------------");
+        Cardiologist1.printDetails();
+        System.out.println("------------------------------");
+        Cardiologist2.printDetails();
+        System.out.println("------------------------------");
+
+        // "Part5:添加2个全科医生和2个其他医生的预约用createAppointment";
+        System.out.println("第五部分");
+        createAppointment("Emma", "1234567890", "2024-11-11 9:00", General1);
+        createAppointment("Henry", "2234567890", "2024-11-12 10:30", General2);
+        createAppointment("Liam", "3234567890", "2024-11-13 11:00", Cardiologist1);
+        createAppointment("Quinn", "4234567890", "2024-11-14 12:30", Cardiologist2);
+
+        // "Part5:输出已预约的列表";
+        printExistingAppointments();
+        // "Part5:取消预约";
+        cancelBooking("4234567890");
+        // "Part5:取消后更新的预约列表";
+        printExistingAppointments();
+        // "Part5:取消不存在的";
+        cancelBooking("1122334455");
+    }
+
+    // "Part5:创建预约createAppointment";
+    public static void createAppointment(String name, String phone, String time, HealthProfessional doctor) {
+        // "生成预约appointment";
+        Appointment appointment = new Appointment(name, phone, time, doctor);
+        // "添加到appointmentList用add";
+        appointmentList.add(appointment);
+        // "打印创建成功";
+        System.out.println("create appointment success!");
+    }
+    
