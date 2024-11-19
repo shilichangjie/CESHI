@@ -59,5 +59,6 @@ class Cardiologist extends HealthProfessional {
 
     public void printDetails() {
         super.printDetails();
+        System.out.println("Specialty: " + this.specialty);
     }
 }
