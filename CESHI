@@ -144,4 +144,37 @@ public class AssignmentOne {
         // "打印创建成功";
         System.out.println("create appointment success!");
     }
+        // "Part5:输出已预约列表printExistingAppointments";
+        public static void printExistingAppointments() {
+            // "判断预约列表数量";
+            if (appointmentList.size() == 0) {
+                System.out.println("please add appointment");
+            } else {
+                // "不是空的就打印预约列表appointmentList";
+                for (int i = 0; i < appointmentList.size(); i++) {
+                    appointmentList.get(i).printDetails();
+                    System.out.println("------------------------------");
+                }
+            }
+        }
     
+        // "Part5:取消预约cancelBooking";
+        public static void cancelBooking(String phone) {
+            boolean bool = false;
+            for (int i = 0; i < appointmentList.size(); i++) {
+                // "在预约列表里找是否有该手机号的预约equals比较phone是否相等;"
+                if (appointmentList.get(i).phone == phone) {
+                    // "remove删除列表中该手机号的预约";
+                    appointmentList.remove(i);
+                    System.out.println("Cancel Success: " + phone);
+                    bool = true;
+                    break;
+                }
+            }
+            // "如果bool是false说明预约列表没找phone取消失败;"
+            if (!bool) {
+                System.out.println("Cancel Error: " + phone);
+            }
+        }
+    }
+    ```
